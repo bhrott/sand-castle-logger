@@ -41,3 +41,8 @@ a {
 .log-code {
     color: #666;
 }
+
+.log-icon {
+    font-size: 18px;
+    margin-right: 5px;
+}

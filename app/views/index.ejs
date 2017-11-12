@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
@@ -34,7 +35,9 @@
       <div class="col" id="list">
         <div class="log" v-for="log in logs" v-bind:style="getContainerStyle(log)">
           <div class="log-header">
+
             <span class="log-title" v-bind:class="getTitleClass(log)">
+              <i class="log-icon fa" v-bind:class="log.metadata.icon" v-if="log.metadata.icon" aria-hidden="true"></i>
               {{ log.metadata.title }}
             </span>
           </div>
