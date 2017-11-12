@@ -1,1 +1,1 @@
-docker build --tag sand-castle-logger/api .
+docker build --tag sand-castle-logger .
