@@ -1,0 +1,43 @@
+body {
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00b7ff;
+}
+
+.header {
+    background-color: #f1f1f1;
+    margin-bottom: 30px;
+    padding: 10px;
+    color: #666;
+}
+
+.body {
+    max-width: 900px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+}
+
+.log {
+    border: 1px solid gainsboro;
+    margin-bottom: 10px;
+    border-left: 8px solid gainsboro;
+}
+
+.log-header {
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.log-body {
+    margin: 10px;
+}
+
+.log-code {
+    color: #666;
+}

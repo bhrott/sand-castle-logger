@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <!-- head -->
+  <div class="container-fluid header" id="header">
+    <div class="row">
+      <div class="col">
+        <img src="/img/logo.png" alt="" class="logo">
+      </div>
+      <div class="col" style="text-align:center">
+        <h1>{{id}}</h1>
+      </div>
+      <div class="col text-right">
+        <div style="padding-top: 10px; padding-right: 50px;">
+          <button type="button" class="btn btn-light" v-on:click="clear()">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container body">
+    <div class="row">
+      <div class="col" id="list">
+        <div class="log" v-for="log in logs" v-bind:style="getContainerStyle(log)">
+          <div class="log-header">
+            <span class="log-title" v-bind:class="getTitleClass(log)">
+              {{ log.metadata.title }}
+            </span>
+          </div>
+          <div class="log-body">
+            <pre class="log-code">{{ log.body | pretty }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/vendor/axios.js"></script>
+  <script src="/vendor/socket-io-client.js"></script>
+  <script src="/vendor/vuejs.js"></script>
+  <script src="/javascripts/index.js"></script>
+</body>
+
+</html>
