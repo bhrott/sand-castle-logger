@@ -35,14 +35,24 @@ a {
 }
 
 .log-body {
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 .log-code {
     color: #666;
+    margin: 10px;
 }
 
 .log-icon {
     font-size: 18px;
     margin-right: 5px;
+}
+
+.log-info {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.log-date {
+    color: #a4a4a4;
 }

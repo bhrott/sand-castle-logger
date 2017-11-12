@@ -43,6 +43,11 @@
           </div>
           <div class="log-body">
             <pre class="log-code">{{ log.body | pretty }}</pre>
+            <div class="log-info text-right">
+              <span class="log-date">
+                <i class="fa fa-clock-o"></i> {{ getCurrentDate() }}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -52,6 +57,7 @@
   <script src="/vendor/axios.js"></script>
   <script src="/vendor/socket-io-client.js"></script>
   <script src="/vendor/vuejs.js"></script>
+  <script src="/vendor/moment.js"></script>
   <script src="/javascripts/index.js"></script>
 </body>
 
