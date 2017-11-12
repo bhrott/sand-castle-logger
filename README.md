@@ -46,7 +46,7 @@ After you install and open dashboard on your browser, you now can send logs to i
 
 When you open the dashboard, realize the token param on url: `http://localhost:3000/?&t=default`.
 
-The `t=default` is customizable. You can set new value like `http://localhost:3000/?&t=potato`. It allow you to have multiple dashboards listening differents namespace logs.
+The `t=default` is customizable. You can set new value like `http://localhost:3000/?&t=potato`. It allow you to have multiple dashboards listening different namespace logs.
 
 The name of this parameter is `namespace token`.
 
@@ -58,8 +58,8 @@ The body of the request must be:
 {
 	"metadata": {
 		"title": "your log title",
-		"type": "error",
-		"icon": "fa-bug"
+		"type": "type of the error",
+		"icon": "font awesome icon"
 	},
 	"body": {}
 }
@@ -72,6 +72,25 @@ When:
     * `icon`: any [Font-Awesome](http://fontawesome.io/icons/) icon.
 * `body`: any `json object` you want to log.
 
+
+**Ex:** <br />
+Dashboard URL: `http://localhost:3000/?&t=my-awesome-app`
+
+API Request:<br />
+`POST http://localhost:3000/api/log/my-awesome-app`
+```json
+{
+	"metadata": {
+		"title": "/api/users/test",
+		"type": "error",
+		"icon": "fa-bug"
+	},
+	"body": {
+		"error": "internal_error",
+		"error_description": "unable to connect to database."
+	}
+}
+```
 
 ![log anathomy](docs/res/log-anathomy.png)
 
