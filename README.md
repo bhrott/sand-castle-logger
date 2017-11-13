@@ -99,4 +99,7 @@ API Request:<br />
 
 ## Release Notes
 
+### 1.0.1
+* Fix: cached time on log item.
+
 ### 1.0.0: First release
