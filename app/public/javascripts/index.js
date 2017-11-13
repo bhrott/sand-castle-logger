@@ -5,7 +5,7 @@ var list = new Vue({
     },
     methods: {
         getCurrentDate: function() {
-            return moment().format('YYYY-MM-DD HH:MM:SS')
+            return moment().format('YYYY-MM-DD HH:mm:ss:SSS')
         },
         getContainerStyle: function(log) {
             var type = log.metadata.type || 'info'
