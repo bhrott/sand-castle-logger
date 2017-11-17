@@ -4,6 +4,10 @@ const consign = require('consign')
 const express = require('express')
 const app = express()
 
+const options = require('./options.json')
+
+app.set('options', options)
+
 consign({
     cwd: 'app'
 })
