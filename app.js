@@ -4,9 +4,19 @@ const consign = require('consign')
 const express = require('express')
 const app = express()
 
-const options = require('./options.json')
+function loadOptions() {
+    let options = {}
 
-app.set('options', options)
+    try {
+        options = require('./options.json')
+    } catch (error) {
+        console.error(error)
+    }
+
+    app.set('options', options || {})
+}
+
+loadOptions()
 
 consign({
     cwd: 'app'

@@ -58,8 +58,10 @@ The body of the request must be:
 {
 	"metadata": {
 		"title": "your log title",
-		"type": "type of the error",
-		"icon": "font awesome icon"
+
+		"type": "type of the error (default=info)",
+		"icon": "font awesome icon (default=null)",
+		"uuid": "a unique id for your log (default=auto-generated)"
 	},
 	"body": {}
 }
@@ -105,6 +107,10 @@ If you want, take a look in [Advanced Options](docs/advanced.md)
 **Icon:** <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 ## Release Notes
+
+### 1.2.1
+* Feat: adding `uuid` to logs.
+* Fix: wrong options parce.
 
 ### 1.1.0
 * Feat: adding client auth header options in advanced settings.
