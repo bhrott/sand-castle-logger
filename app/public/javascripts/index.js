@@ -4,9 +4,6 @@ var list = new Vue({
         logs: []
     },
     methods: {
-        getCurrentDate: function(log) {
-            return moment().format('YYYY-MM-DD HH:mm:ss:SSS')
-        },
         getContainerStyle: function(log) {
             var type = log.metadata.type || 'info'
 
