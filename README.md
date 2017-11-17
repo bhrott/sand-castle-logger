@@ -70,8 +70,9 @@ The body of the request must be:
 When:
 * `metadata.`
     * `title`: the title of the log.
-    * `type`: the type of the log (`error` | `info` | `success`)
-    * `icon`: any [Font-Awesome](http://fontawesome.io/icons/) icon.
+    * `type` (optional): the type of the log (`error` | `info` | `success`)
+    * `icon` (optional): any [Font-Awesome](http://fontawesome.io/icons/) icon.
+	* `uuid` (optional): some id to let you identify your log.
 * `body`: any `json object` you want to log.
 
 
