@@ -106,6 +106,9 @@ If you want, take a look in [Advanced Options](docs/advanced.md)
 
 ## Release Notes
 
+### 1.1.0
+* Feat: adding client auth header options in advanced settings.
+
 ### 1.0.1
 * Fix: cached time on log item.
 
