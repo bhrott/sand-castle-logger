@@ -53,3 +53,15 @@ a {
     padding: 10px;
     color: #a4a4a4;
 }
+
+.message {
+    margin-bottom: -10px;
+    text-align: center;
+    padding: 4px;
+    display: none;
+}
+
+.message-error {
+    background-color: #dc493a;
+    color: white;
+}

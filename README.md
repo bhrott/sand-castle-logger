@@ -109,6 +109,9 @@ If you want, take a look in [Advanced Options](docs/advanced.md)
 
 ## Release Notes
 
+### 1.2.2
+* Feat: adding `onDisconnect` alert message
+
 ### 1.2.1
 * Feat: adding `uuid` to logs.
 * Fix: wrong options parse.
