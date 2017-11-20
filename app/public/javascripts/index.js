@@ -41,7 +41,12 @@ var list = new Vue({
 var header = new Vue({
     el: '#header',
     data: {
-        id: 'carregando...'
+        id: 'carregando...',
+        message: {
+            text: 'asdasdasasd',
+            visible: false,
+            type: 'error'
+        }
     },
     methods: {
         clear: function() {
@@ -119,6 +124,14 @@ function listen(namespace) {
 
     socket.on('log:new', function(msg) {
         list.logs.unshift(msg)
+    })
+
+    socket.on('disconnect', function() {
+        header.message = {
+            text: 'Disconnected! Reload the page to reconnect.',
+            visible: true,
+            type: 'error'
+        }
     })
 }
 

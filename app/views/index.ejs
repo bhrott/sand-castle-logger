@@ -29,7 +29,16 @@
         </div>
       </div>
     </div>
+    <div class="row message" v-bind:class="{'message-error': message.type === 'error'}" v-bind:style="{ 'display': message.visible ? 'block' : 'hidden'}">
+      <div class="col">
+        <div>
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+
   </div>
+
   <div class="container body">
     <div class="row">
       <div class="col" id="list">
