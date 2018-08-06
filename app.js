@@ -10,7 +10,7 @@ function loadOptions() {
     try {
         options = require('./options.json')
     } catch (error) {
-        console.error(error)
+        console.log('Custom options not found, using the defaults...')
     }
 
     app.set('options', options || {})

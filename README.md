@@ -30,13 +30,17 @@ We strongly recommend you to use Docker to avoid node version errors.
 * Clone this repository
 * Run `npm install`
 * Run `npm start`
-* Open `http://localhost:3000` on your browser
+* Open `http://localhost:3009` on your browser
 
 ### Docker
 * Clone this repository
-* Run `sh scripts/docker/build.sh`
-* Run `sh scripts/docker/run.sh`
-* Open `http://localhost:3000` on your browser
+* Run `make run`
+* Open `http://localhost:3009` on your browser
+
+Available commands:
+* `make run`: start the service
+* `make run-with-logs`: start the service and keep console logs
+* `make down`: stop the service
 
 
 ## Logging
@@ -44,14 +48,14 @@ We strongly recommend you to use Docker to avoid node version errors.
 ### Chose your dashboard
 After you install and open dashboard on your browser, you now can send logs to it.
 
-When you open the dashboard, realize the token param on url: `http://localhost:3000/?&t=default`.
+When you open the dashboard, realize the token param on url: `http://localhost:3009/?&t=default`.
 
-The `t=default` is customizable. You can set new value like `http://localhost:3000/?&t=potato`. It allow you to have multiple dashboards listening different namespace logs.
+The `t=default` is customizable. You can set new value like `http://localhost:3009/?&t=potato`. It allow you to have multiple dashboards listening different namespace logs.
 
 The name of this parameter is `namespace token`.
 
 ### Send logs to api
-After you chose your dashboard (or chose to use `default`), just send a `POST` request to `http://localhost:3000/api/log/{namespace token}`.
+After you chose your dashboard (or chose to use `default`), just send a `POST` request to `http://localhost:3009/api/log/{namespace token}`.
 
 The body of the request must be:
 ```json
@@ -77,10 +81,10 @@ When:
 
 
 **Ex:** <br />
-Dashboard URL: `http://localhost:3000/?&t=my-awesome-app`
+Dashboard URL: `http://localhost:3009/?&t=my-awesome-app`
 
 API Request:<br />
-`POST http://localhost:3000/api/log/my-awesome-app`
+`POST http://localhost:3009/api/log/my-awesome-app`
 ```json
 {
 	"metadata": {
@@ -108,6 +112,10 @@ If you want, take a look in [Advanced Options](docs/advanced.md)
 **Icon:** <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 ## Release Notes
+
+### 1.3.0
+* Change: change default port to 3009 due conflicts with default webapps port (3000)
+* Feat: adding docker-compose to make start/stop easier
 
 ### 1.2.2
 * Feat: adding `onDisconnect` alert message

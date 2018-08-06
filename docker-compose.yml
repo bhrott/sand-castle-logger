@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  logger:
+    build: .
+    ports:
+      - "3009:3000"
