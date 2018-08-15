@@ -45,7 +45,7 @@
         <div class="log" v-for="log in logs" v-bind:style="getContainerStyle(log)">
           <div class="log-header">
 
-            <span class="log-title" v-bind:class="getTitleClass(log)">
+            <span class="log-title" v-bind:style="getTitleStyle(log)">
               <i class="log-icon fa" v-bind:class="log.metadata.icon" v-if="log.metadata.icon" aria-hidden="true"></i>
               {{ log.metadata.title }}
             </span>

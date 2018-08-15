@@ -6,3 +6,6 @@ run-with-logs:
 
 down:
 	docker-compose down
+
+build:
+	docker build --tag sand-castle-logger .

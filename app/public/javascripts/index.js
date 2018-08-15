@@ -4,35 +4,15 @@ var list = new Vue({
         logs: []
     },
     methods: {
-        getContainerStyle: function(log) {
-            var type = log.metadata.type || 'info'
-
-            if (type === 'success') {
-                return { 'border-color': '#30A54A' }
-            }
-
-            if (type === 'error') {
-                return { 'border-color': '#DA3849' }
-            }
-
-            return {}
+        getContainerStyle: function (log) {
+            return { 'border-color': log.metadata.color }
         },
-        getTitleClass: function(log) {
-            var type = log.metadata.type || 'info'
-
-            if (type === 'success') {
-                return { 'text-success': true }
-            }
-
-            if (type === 'error') {
-                return { 'text-danger': true }
-            }
-
-            return {}
+        getTitleStyle: function (log) {
+            return { 'color': log.metadata.color }
         }
     },
     filters: {
-        pretty: function(value) {
+        pretty: function (value) {
             return JSON.stringify(value, null, 2)
         }
     }
@@ -41,15 +21,15 @@ var list = new Vue({
 var header = new Vue({
     el: '#header',
     data: {
-        id: 'carregando...',
+        id: 'loading...',
         message: {
-            text: 'asdasdasasd',
+            text: 'loading...',
             visible: false,
             type: 'error'
         }
     },
     methods: {
-        clear: function() {
+        clear: function () {
             list.logs = []
         }
     }
@@ -108,25 +88,25 @@ function join() {
     var namespace = getCurrentNamespace()
     axios
         .post('/join/' + namespace)
-        .then(function(res) {
+        .then(function (res) {
             listen(res.data.namespace)
         })
-        .catch(function(err) {
+        .catch(function (err) {
             console.error(err)
         })
 }
 
 function listen(namespace) {
     socket = io(namespace)
-    socket.on('connection:success', function(msg) {
+    socket.on('connection:success', function (msg) {
         header.id = namespace.replace('/', '')
     })
 
-    socket.on('log:new', function(msg) {
+    socket.on('log:new', function (msg) {
         list.logs.unshift(msg)
     })
 
-    socket.on('disconnect', function() {
+    socket.on('disconnect', function () {
         header.message = {
             text: 'Disconnected! Reload the page to reconnect.',
             visible: true,

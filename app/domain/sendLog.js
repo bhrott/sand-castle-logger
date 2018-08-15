@@ -13,7 +13,7 @@ module.exports = app => {
     function hydrateLog(logData) {
         logData.metadata = Object.assign(
             {
-                type: 'info',
+                color: 'lightgray',
                 icon: null,
                 uuid: guid()
             },

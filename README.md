@@ -13,7 +13,21 @@ How it works:
 
 
 2) Send a request to the api: <br />
-![send-request](docs/res/send-request.png)
+```
+POST http://localhost:3009/api/log/default
+Body (application/json)
+{
+  "metadata": {
+    "title": "Api url: /api/users/test",
+    "color": "#FF4A1C",
+    "icon": "fa-bug"
+  },
+  "body": {
+    "error": "internal_error",
+    "error_description": "unable to connect to database."
+  }
+}
+```
 
 
 3) View the log appears on dashboard: <br />
@@ -61,11 +75,11 @@ The body of the request must be:
 ```json
 {
 	"metadata": {
-		"title": "your log title",
+		"title": "this is my title",
 
-		"type": "type of the error (default=info)",
-		"icon": "font awesome icon (default=null)",
-		"uuid": "a unique id for your log (default=auto-generated)"
+		"color": "#FFD5FF",
+		"icon": "fa-bug",
+		"uuid": "this_is_the_id_1"
 	},
 	"body": {}
 }
@@ -73,10 +87,10 @@ The body of the request must be:
 
 When:
 * `metadata.`
-    * `title`: the title of the log.
-    * `type` (optional): the type of the log (`error` | `info` | `success`)
-    * `icon` (optional): any [Font-Awesome](http://fontawesome.io/icons/) icon.
-	* `uuid` (optional): some id to let you identify your log.
+  * `title`: the title of the log.
+  * `color` (optional): color of the log (string, default=gray, accepts any that works with css).
+  * `icon` (optional): any [Font-Awesome](http://fontawesome.io/icons/) icon.
+  * `uuid` (optional): some id to let you identify your log.
 * `body`: any `json object` you want to log.
 
 
@@ -88,18 +102,19 @@ API Request:<br />
 ```json
 {
 	"metadata": {
-		"title": "/api/users/test",
-		"type": "error",
-		"icon": "fa-bug"
+		"title": "PUT /api/users",
+		"color": "#63C132",
+		"icon": "fa-check-circle"
 	},
 	"body": {
-		"error": "internal_error",
-		"error_description": "unable to connect to database."
+		"message": "user saved!"
 	}
 }
 ```
 
-![log anathomy](docs/res/log-anathomy.png)
+Will reproduce:
+
+![log anathomy](docs/res/log-sample-result.png)
 
 
 ## "Advanced"
@@ -107,27 +122,11 @@ API Request:<br />
 If you want, take a look in [Advanced Options](docs/advanced.md)
 
 
-
 ## Thanks To
 **Icon:** <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
+
+
 ## Release Notes
 
-### 1.3.0
-* Change: change default port to 3009 due conflicts with default webapps port (3000)
-* Feat: adding docker-compose to make start/stop easier
-
-### 1.2.2
-* Feat: adding `onDisconnect` alert message
-
-### 1.2.1
-* Feat: adding `uuid` to logs.
-* Fix: wrong options parse.
-
-### 1.1.0
-* Feat: adding client auth header options in advanced settings.
-
-### 1.0.1
-* Fix: cached time on log item.
-
-### 1.0.0: First release
+[Take a look](CHANGELOG.md)
