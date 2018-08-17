@@ -1,7 +1,7 @@
 # Sand Castle Logger
 
 <p align="center">
-  <img src="docs/res/sand-castle-logger-cover.png" />
+  <img src="docs/res/cover.png" />
 </p>
 
 ## About
